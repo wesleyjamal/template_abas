@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+	<head>	
+		<meta charset="utf-8"/>
+		<title>.</title>
+		<script src="jquery.min.js"></script>
+	</head>
+	
+	
+	<style>
+	
+		#content {
+			
+			width: 1200px;
+			border: solid 1px red;
+			height: 500px;
+			margin: 100px auto;
+			position: relative;
+		
+		}
+		
+		div div	{
+			position: absolute;
+			top: 0px;
+			width : 100%;
+			height: 0px;
+			opacity : 0;
+			transition: all ease 1s;
+		
+		}
+		
+		#tab1 {
+			background : lightblue;
+		}
+		
+		#tab2 {
+			background : lightgreen;
+		}
+		
+		#tab3 {
+			background : lightpink;
+		}
+	
+		.active {
+			opacity: 1;
+			height: 500px;
+		}
+	
+	</style>
+	
+	<body>
+				
+		<a href="#tab1">TAB1</a>
+		<a href="#tab2">TAB2</a>
+		<a href="#tab3">TAB3</a>
+		
+		<div id="content">
+		
+			<div id="tab1" class="active"></div>
+			<div id="tab2"></div>
+			<div id="tab3"></div>
+
+		</div>
+		
+		
+		
+		
+		
+	</body>
+	
+	<script>
+		
+		jQuery(function() {
+			
+			$("a").click(function(event) {
+				
+				event.preventDefault();
+				
+				$("#content div").removeClass("active");
+				
+				var div = $(this).attr("href");
+				
+				$(div).addClass("active");
+				
+			});
+			
+			
+		});
+				
+	</script>
+</html>
